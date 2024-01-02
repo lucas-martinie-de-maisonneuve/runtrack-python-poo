@@ -32,8 +32,14 @@ plateau_de_jeu = [
 
 personnage = Personnage(x=2, y=2, plateau=plateau_de_jeu)
 
-print("Position initiale:", personnage.position())
+print("Position de depart:", personnage.position())
 personnage.gauche()
-print("Position après déplacement à gauche:", personnage.position())
+print("Position après un déplacement à gauche:", personnage.position())
+personnage.gauche()
+print("Position après un déplacement à gauche:", personnage.position())
+personnage.haut()
+print("Position après un déplacement en haut:", personnage.position())
 personnage.droite()
-print("Position après déplacement vers le haut:", personnage.position())
+print("Position après un déplacement à droite:", personnage.position())
+personnage.bas()
+print("Position après un déplacement en bas:", personnage.position())
