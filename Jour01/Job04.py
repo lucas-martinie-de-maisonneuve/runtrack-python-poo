@@ -5,10 +5,10 @@ class Personne:
         self.nom = nom
     
     def SePresenter(self):
-        return f"Je suis {self.prenom} {self.nom}"
+        print(f"Je suis {self.prenom} {self.nom}")
     
-personne1 = Personne("John", "Doe")
-personne2 = Personne("Jean", "Dupont")
+john = Personne("John", "Doe")
+jean = Personne("Jean", "Dupont")
 
-print (personne1.SePresenter())
-print (personne2.SePresenter())
+john.SePresenter()
+jean.SePresenter()
