@@ -5,5 +5,5 @@ class Operation:
 
 ope = Operation(12, 3)
 
-print("Le nombre est", ope.nombre1)
+print("Le nombre est", Operation(12, 3).nombre1)
 print("Le nombre est", ope.nombre2)

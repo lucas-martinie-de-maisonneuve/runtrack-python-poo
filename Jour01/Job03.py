@@ -9,5 +9,3 @@ class Operation:
 
 ope = Operation(12, 3)
 print (f"Le résultat de l'addition est {ope.addition()}")
-
-ope.addition()
