@@ -12,13 +12,9 @@ class Animal:
         self.prenom = nouveau_nom
         print(f"Le nom de l'animal est : {animal.prenom}")
 
-
 animal = Animal()
 
 print(f"L'âge de l'animal est : {animal.age}")
 animal.vieillir()
 animal.nommer("Luna")
-animal.vieillir()
-animal.vieillir()
-animal.vieillir()
 
