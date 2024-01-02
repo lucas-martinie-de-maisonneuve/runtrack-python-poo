@@ -5,7 +5,8 @@ class Operation:
 
     def addition(self):
         resultat = self.nombre1 + self.nombre2
-        return resultat
+        print (f"Le résultat de l'addition est {resultat}")
 
 ope = Operation(12, 3)
-print (f"Le résultat de l'addition est {ope.addition()}")
+
+ope.addition()
