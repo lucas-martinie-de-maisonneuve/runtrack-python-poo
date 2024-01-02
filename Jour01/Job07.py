@@ -21,6 +21,12 @@ class Personnage:
             self.y += 1
 
     def position(self):
+        for i in range(len(self.plateau)):
+            for j in range(len(self.plateau[i])):
+                if i == self.y and j == self.x:
+                    self.plateau[i][j] = 1
+                else:
+                    self.plateau[i][j] = 0
         return (self.x, self.y)
 
 plateau_de_jeu = [
@@ -33,6 +39,7 @@ plateau_de_jeu = [
 personnage = Personnage(x=2, y=2, plateau=plateau_de_jeu)
 
 print("Position de depart:", personnage.position())
+
 personnage.gauche()
 print("Position après un déplacement à gauche:", personnage.position())
 personnage.gauche()
@@ -43,3 +50,10 @@ personnage.droite()
 print("Position après un déplacement à droite:", personnage.position())
 personnage.bas()
 print("Position après un déplacement en bas:", personnage.position())
+
+print (f"""
+    {plateau_de_jeu[0]}
+    {plateau_de_jeu[1]}
+    {plateau_de_jeu[2]}
+    {plateau_de_jeu[3]}
+       """)

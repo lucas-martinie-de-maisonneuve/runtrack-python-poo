@@ -1,3 +1,5 @@
+from math import pi
+
 class Cercle:
     def __init__(self, rayon):
         self.rayon = rayon
@@ -14,11 +16,11 @@ class Cercle:
         """)
 
     def circonference(self):
-        circ = self.rayon * 2 * 3.14
-        return circ
+        circonference_cercle = self.rayon * 2 * pi
+        return circonference_cercle
     
     def aire(self):
-        aire_cercle = self.rayon * self.rayon * 3.14
+        aire_cercle = self.rayon * self.rayon * pi
         return aire_cercle
     
     def diametre(self):
@@ -27,6 +29,5 @@ class Cercle:
     
 cercle = Cercle(4)
 cercle.afficherInfos()
-
 cercle.changerRayon(7)
 cercle.afficherInfos()
