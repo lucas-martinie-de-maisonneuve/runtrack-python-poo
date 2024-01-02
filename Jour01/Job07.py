@@ -5,20 +5,16 @@ class Personnage:
         self.plateau = plateau
 
     def gauche(self):
-        if self.x > 0:
-            self.x -= 1
+        self.x -= 1
 
     def droite(self):
-        if self.x < len(self.plateau[0]) - 1:
-            self.x += 1
+        self.x += 1
 
     def haut(self):
-        if self.y > 0:
-            self.y -= 1
+        self.y -= 1
 
     def bas(self):
-        if self.y < len(self.plateau) - 1:
-            self.y += 1
+        self.y += 1
 
     def position(self):
         return (self.x, self.y)
