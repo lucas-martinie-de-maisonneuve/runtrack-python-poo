@@ -6,7 +6,7 @@ class Produit:
     
     def CalculerPrixTTC(self):
         prixttc = self.prixHT * (1 + self.TVA /100)
-        return round(prixttc, 2)
+        return round(prixttc, 2) 
     
     def afficher(self):
         return f"""-----------------------------------------------------------
@@ -28,9 +28,9 @@ class Produit:
     def get_TVA(self):
         return self.TVA
 
-pomme = Produit(nom="pomme", prixHT=1, TVA=28)
-orange = Produit(nom="orange", prixHT=2, TVA=28)
-banane = Produit(nom="banane", prixHT=1.5, TVA=28)
+pomme = Produit(nom="pomme", prixHT=1, TVA=5.5)
+orange = Produit(nom="orange", prixHT=2, TVA=5.5)
+banane = Produit(nom="banane", prixHT=1.5, TVA=5.5)
 
 print(f"""-----------------------------------------------------------
     ---->   Informations initiales  <----
