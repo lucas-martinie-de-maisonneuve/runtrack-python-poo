@@ -5,14 +5,14 @@ class Produit:
         self.TVA = TVA
     
     def CalculerPrixTTC(self):
-        prixttc = self.prixHT * (1 + self.TVA)
-        return prixttc
+        prixttc = self.prixHT * (1 + self.TVA /100)
+        return round(prixttc, 2)
     
     def afficher(self):
         return f"""-----------------------------------------------------------
             Nom du produit : {self.nom}
             Prix TTC : {self.CalculerPrixTTC()} €
-            (Prix Hors Taxe : {self.prixHT} € et TVA à {self.TVA * 100} %)"""
+            (Prix Hors Taxe : {self.prixHT} € et TVA à {self.TVA} %)"""
     
     def changer(self, new_prixHT, new_nom):
         self.prixHT = new_prixHT
@@ -28,9 +28,9 @@ class Produit:
     def get_TVA(self):
         return self.TVA
 
-pomme = Produit(nom="pomme", prixHT=1, TVA=0.05)
-orange = Produit(nom="orange", prixHT=2, TVA=0.1)
-banane = Produit(nom="banane", prixHT=1.5, TVA=0.08)
+pomme = Produit(nom="pomme", prixHT=1, TVA=28)
+orange = Produit(nom="orange", prixHT=2, TVA=28)
+banane = Produit(nom="banane", prixHT=1.5, TVA=28)
 
 print(f"""-----------------------------------------------------------
     ---->   Informations initiales  <----
