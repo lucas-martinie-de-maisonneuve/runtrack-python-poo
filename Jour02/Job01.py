@@ -26,4 +26,5 @@ rect.set_largeur(6)
 
 print(f"""
     Longueur modifié : {rect.get_longueur()}
-    Largeur modifié : {rect.get_largeur()}""")
+    Largeur modifié : {rect.get_largeur()}
+""")
