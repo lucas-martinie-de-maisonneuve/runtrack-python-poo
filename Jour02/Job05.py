@@ -34,21 +34,24 @@ class Voiture:
     def demarrer(self):
         if self.__verifier_plein() > 5:
             self.en_marche = True
+            print(f"        La voiture est démarré")
+        else:
+            print(f"        Il n'y a pas assez d'essence pour démarrer")
+
     def arreter(self):
         self.en_marche = False
+        print(f"        La voiture s'arrête")
 
     def __verifier_plein(self):
+        print(f"        Le réservoir est de {self.get_reservoir()} litres")
         return self.get_reservoir()
 
 voit = Voiture(marque='Renault', modele='Twingo', annee=1995, kilometrage=500000)
 
-print(f"Voiture en marche : {voit.get_en_marche()}")
-print(f"Le niveau du réservoir est de {voit.get_reservoir()} litres.")
+print(f"""
+        Voiture : {voit.get_marque()} {voit.get_modele()} de {voit.get_annee()} avec {voit.get_kilometrage()} Km
+        """)
 voit.demarrer()
-print(f"Voiture en marche : {voit.get_en_marche()}")
 voit.arreter()
-print(f"Voiture en marche : {voit.get_en_marche()}")
 voit.set_reservoir(5)
-print(f"Le niveau du réservoir est de {voit.get_reservoir()} litres.")
 voit.demarrer()
-print(f"Voiture en marche : {voit.get_en_marche()}")
