@@ -52,8 +52,8 @@ commande1.ajouter_plat("Tiramisu", prix=5.0)
 
 commande1.afficher_commande()
 
-tva_commande1 = commande1.calculer_tva()
-print(f"TVA à payer pour la commande #{commande1.get_numero_commande()}: {tva_commande1} €\n")
+# tva_commande1 = commande1.calculer_tva()
+print(f"TVA à payer pour la commande #{commande1.get_numero_commande()}: {commande1.calculer_tva()} €\n")
 
 commande1.annuler_commande()
 commande1.afficher_commande()
