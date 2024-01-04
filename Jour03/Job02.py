@@ -1,5 +1,5 @@
 class CompteBancaire:
-    def __init__(self, num_compte, nom, prenom, solde, decouvert=True):
+    def __init__(self, num_compte, nom, prenom, solde, decouvert):
         self.__num_compte = num_compte
         self.__nom = nom
         self.__prenom = prenom
@@ -60,7 +60,7 @@ class CompteBancaire:
             print("Des agios de 10€ ont été appliqués au compte")
 
     def virement(self, reference, compte_destinataire, montant):
-        if (self.get_solde() - montant >= 0 and isinstance(montant, int)):
+        if (self.get_solde() - montant >= 0 or self.get_decouvert()) and isinstance(montant, int):
             self.retrait(montant)
             compte_destinataire.versement(montant)
             print(f"""
@@ -70,8 +70,8 @@ class CompteBancaire:
         else:
             print("Impossible de réaliser le virement, solde insuffisant.")
 
-compte1 = CompteBancaire(105200, 'Doe', 'John', 1200)
-compte2 = CompteBancaire(252161, 'Smith', 'Alice', -500)
+compte1 = CompteBancaire(105200, 'Doe', 'John', 1200, True)
+compte2 = CompteBancaire(252161, 'Smith', 'Alice', -500, True)
 
 compte1.afficher_info()
 compte1.retrait(1000)
