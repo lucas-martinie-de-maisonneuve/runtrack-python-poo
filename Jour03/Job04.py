@@ -72,10 +72,10 @@ class Equipe:
             joueur.afficher_stat()
 
     def mettre_a_jour_statistiques_joueur(self, joueur, buts, passes, carton_jaune, carton_rouge):
-        joueur.set_but(joueur.get_but() + buts)
-        joueur.set_passe(joueur.get_passe() + passes)
-        joueur.set_carton_j(joueur.get_carton_j() + carton_jaune)
-        joueur.set_carton_r(joueur.get_carton_r() + carton_rouge)
+        joueur.set_but(buts)
+        joueur.set_passe(passes)
+        joueur.set_carton_j(carton_jaune)
+        joueur.set_carton_r(carton_rouge)
 
 equipe1 = Equipe("Équipe 1")
 joueur1 = Joueur("John", 10, "Attaquant")
@@ -101,7 +101,7 @@ joueur1.marquer_but()
 joueur3.effectuer_passe_decisive()
 joueur4.marquer_but()
 joueur3.recevoir_carton_jaune()
-equipe1.mettre_a_jour_statistiques_joueur(joueur2, 1, 0, 1, 0)
+equipe1.mettre_a_jour_statistiques_joueur(joueur2, 1, 2, 1,0)
 
 equipe1.afficher_statistiques_joueurs()
 equipe2.afficher_statistiques_joueurs()
