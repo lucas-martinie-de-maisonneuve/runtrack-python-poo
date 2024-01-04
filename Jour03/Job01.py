@@ -18,7 +18,7 @@ class Personne:
         self.__nom = nom
         self.__age = age
         self.__objet_ville = objet_ville
-    
+        
     def get_nom(self):
         return self.__nom
     def get_age(self):
@@ -35,8 +35,7 @@ class Personne:
         self.__objet_ville = objet_ville
 
     def ajouterPopulation(self):
-            populations = self.__objet_ville.get_habitants()
-            self.__objet_ville.set_habitants(populations + 1)
+            self.__objet_ville.set_habitants(self.__objet_ville.get_habitants() + 1)
 
 ville1 = Ville('Paris', 1000000)
 ville2 = Ville('Marseille', 861635)
