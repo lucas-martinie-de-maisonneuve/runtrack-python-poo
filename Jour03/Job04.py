@@ -101,7 +101,7 @@ joueur1.marquer_but()
 joueur3.effectuer_passe_decisive()
 joueur4.marquer_but()
 joueur3.recevoir_carton_jaune()
-equipe1.mettre_a_jour_statistiques_joueur(joueur2, buts=1, passes=0, carton_jaune=1, carton_rouge=0)
+equipe1.mettre_a_jour_statistiques_joueur(joueur2, 1, 0, 1, 0)
 
 equipe1.afficher_statistiques_joueurs()
 equipe2.afficher_statistiques_joueurs()
