@@ -34,18 +34,25 @@ class Joueur:
 
     def marquer_but(self):
         self.set_but(self.__but + 1)
+        print(f"[---BUT---]{self.get_nom()} marque un but!")
     def effectuer_passe_decisive(self):
         self.set_passe(self.__passe + 1)
+        print(f"[--PASSE--]{self.get_nom()} effectue une passe decissive!")
     def recevoir_carton_jaune(self):
         self.set_carton_j(self.__carton_j + 1)
+        print(f"[--JAUNE--]{self.get_nom()} reçois un carton jaune !")
+        if self.__carton_j == 2:
+            self.set_carton_j(0)
+            self.recevoir_carton_rouge()
+            print("Deuxième carton jaune ! C'est le rouge!")
     def recevoir_carton_rouge(self):
         self.set_carton_r(self.__carton_r + 1)
+        print(f"[--ROUGE--]{self.get_nom()} reçois un carton rouge !")
 
     def afficher_stat(self):
         print(f"""
         Nom : {self.get_nom()}  || Numéro: {self.get_numero()}  || Position : {self.get_position()}
-        But marqué : {self.get_but()}   ||  Passe décisive: {self.get_passe()}
-        Carton Jaune reçu: {self.get_carton_j()} || Carton Rouge reçu: {self.get_carton_r()}""")
+    But marqué : {self.get_but()}   ||  Passe décisive: {self.get_passe()} || Carton Jaune : {self.get_carton_j()} || Carton Rouge : {self.get_carton_r()}""")
 
 class Equipe:
     def __init__(self, nom_equipe):
@@ -57,6 +64,7 @@ class Equipe:
 
     def ajouter_joueur(self, joueur):
         self.liste_equipe.append(joueur)
+        print(f"{joueur.get_nom()} a été ajouté à l'équipe {self.get_nom_equipe()}")
 
     def afficher_statistiques_joueurs(self):
         print(f"\n Statistiques de l'équipe {self.__nom_equipe}:")
@@ -82,6 +90,9 @@ equipe1.ajouter_joueur(joueur2)
 equipe2.ajouter_joueur(joueur3)
 equipe2.ajouter_joueur(joueur4)
 
+equipe1.afficher_statistiques_joueurs()
+equipe2.afficher_statistiques_joueurs()
+
 joueur2.effectuer_passe_decisive()
 joueur1.marquer_but()
 joueur3.recevoir_carton_jaune()
@@ -90,7 +101,7 @@ joueur1.marquer_but()
 joueur3.effectuer_passe_decisive()
 joueur4.marquer_but()
 joueur3.recevoir_carton_jaune()
-
 equipe1.mettre_a_jour_statistiques_joueur(joueur2, buts=1, passes=0, carton_jaune=1, carton_rouge=0)
+
 equipe1.afficher_statistiques_joueurs()
 equipe2.afficher_statistiques_joueurs()
