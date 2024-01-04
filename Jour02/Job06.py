@@ -16,8 +16,7 @@ class Commande:
     def annuler_commande(self):
         self.__plat_commande = []
         self.__statut_commande = "annulée"
-        print(f"Annulation de commande, Statut: {commande1.get_statut_commande()}\n")
-
+        print(f"Annulation de commande, Statut: {self.get_statut_commande()}")
 
     def ajouter_plat(self, nom_plat, prix, statut="en cours"):
         self.__plat_commande.append({"nom": nom_plat, "prix": prix, "statut": statut})
@@ -38,12 +37,12 @@ class Commande:
         tva = self.calculer_tva()
         total = self.__calculer_total()
         if self.__plat_commande != []:
-            print(f"\nCommande #{self.__numero_commande}")
+            print(f"\n      Commande #{self.__numero_commande}")
             for plat in self.__plat_commande:
                 print(f" - {plat['nom']}: {plat['prix']} € ({plat['statut']})")
             print(f"Total à payer: {total} € (TVA incluse: {tva} €)\n")
         else:
-            print (f"Aucun plat pour la Commande #{self.__numero_commande}\n")
+            print(f"Aucun plat pour la Commande #{self.__numero_commande}\n")
 
 commande1 = Commande(numero_commande=1)
 
@@ -58,4 +57,3 @@ print(f"TVA à payer pour la commande #{commande1.get_numero_commande()}: {tva_c
 
 commande1.annuler_commande()
 commande1.afficher_commande()
-
