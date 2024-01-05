@@ -46,7 +46,7 @@ class Jeu:
 
             ennemi.attaquer(joueur)
             if joueur.vie <= 0:
-                print(f"\n>{joueur.nom} a été vaincu. {ennemi.nom} a gagné! <-------")
+                print(f"\n-------> {joueur.nom} a été vaincu. {ennemi.nom} a gagné! <-------")
                 break
 
             print(f"\n{joueur.nom} - Vie : {joueur.vie} | {ennemi.nom} - Vie : {ennemi.vie}\n")
